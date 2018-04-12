@@ -1,1 +1,1 @@
-# cogs 121
+# COGS 121 Project [teamname]
