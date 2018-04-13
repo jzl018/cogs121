@@ -1,1 +1,1 @@
-# COGS 121 Project [teamname]
+# COGS 121 Project Ready, Set, Guo
