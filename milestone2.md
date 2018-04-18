@@ -1,0 +1,1 @@
+![Image of Paper Prototype1](https://github.com/ltliang1/cogs121/blob/master/images/Paper%20Prototype%201.pdf)
