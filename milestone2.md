@@ -1,1 +1,1 @@
-![Image of Paper Prototype2]https://raw.githubusercontent.com/ltliang1/cogs121/master/images/PPT2-1.png
+![Image of Paper Prototype2] (https://raw.githubusercontent.com/ltliang1/cogs121/master/images/PPT2-1.png)
