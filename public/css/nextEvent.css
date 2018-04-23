@@ -8,6 +8,11 @@
   margin-top: 10px;
 }
 
+#goBtn {
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
 .profile div {
     width: 100%;
     margin-left: auto;
@@ -15,7 +20,7 @@
 }
 
 #googleMaps {
-    height: 1000px;
+    height: 400px;
 }
 
 #map {
