@@ -1,10 +1,6 @@
-$(document).ready(function() {
-  console.log("document ready");
+const tMethod = $('a.method');
 
-  $('a#temp').click(function() {
-    console.log("hello");
-  });
-
+tMethod.click(function() {
+  const currentBtn = $(this).attr('id');
+  $('#transportStyle').text(currentBtn);
 });
-
-console.log("pls");
