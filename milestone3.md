@@ -1,4 +1,3 @@
-Embed screenshots
 
 Our project is completely different from the idea described in our
 paper prototypes in milestone 2. Per the feedback session we had on 
@@ -11,3 +10,5 @@ path from one place on campus to another. Our end goal is to help our
 users discover new--and faster--ways to travel around campus. Note that 
 our app will include obscure paths, which are ideally more efficient 
 than what existing map apps, i.e. Google Maps, offer. 
+
+![Screenshot of Home page]
