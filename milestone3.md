@@ -11,6 +11,6 @@ users discover new--and faster--ways to travel around campus. Note that
 our app will include obscure paths, which are ideally more efficient 
 than what existing map apps, i.e. Google Maps, offer. 
 
-![Screenshot of Home page](https://github.com/ltliang1/cogs121/blob/master/images/Milestone%202/Homepage.JPG)
+![Screenshot of Home page](https://github.com/ltliang1/cogs121/blob/master/images/Milestone%203/Homepage.JPG)
 
-![Screenshot of Event page](https://github.com/ltliang1/cogs121/blob/master/images/Milestone%202/nextEvent.JPG)
+![Screenshot of Event page](https://github.com/ltliang1/cogs121/blob/master/images/Milestone%203/nextEvent.JPG)
