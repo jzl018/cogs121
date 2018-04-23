@@ -12,6 +12,11 @@
   margin-left: 10px;
 }
 
+#agenda {
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
 #sign-out {
   position: absolute;
   bottom: 10px;
