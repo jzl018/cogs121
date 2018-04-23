@@ -1,0 +1,30 @@
+{
+  "name": "cogs121",
+  "version": "1.0.0",
+  "description": "cogs121_project",
+  "main": "app.js",
+  "scripts": {
+    "test": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ltliang1/cogs121.git"
+  },
+  "keywords": [
+    "cogs",
+    "cogs121",
+    "121",
+    "ucsd",
+    "project"
+  ],
+  "author": "Lee Liang, Jason Liu, Michelle Nguyen, Kenneth Truong",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ltliang1/cogs121/issues"
+  },
+  "homepage": "https://github.com/ltliang1/cogs121#readme",
+  "dependencies": {
+    "express": "^4.16.3",
+    "express-handlebars": "^3.0.0"
+  }
+}
