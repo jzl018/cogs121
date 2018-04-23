@@ -9,7 +9,7 @@ const login = require('./routes/login');
 const home = require('./routes/home');
 const nextEvent = require('./routes/nextEvent');
 const agenda = require('./routes/agenda');
-//const temp = require('.routes/temp');
+const temp = require('./routes/temp');
 
 const app = express();
 
@@ -23,7 +23,7 @@ app.get('/', login.view);
 app.get('/home', home.view);
 app.get('/nextEvent', nextEvent.view);
 app.get('/agenda', agenda.view);
-//app.get('/temp', temp.view);
+app.get('/temp', temp.view);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
