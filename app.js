@@ -98,15 +98,15 @@ app.get('/users/:userid', (req, res) => {
 
 const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({extended: true})); // hook up with your app
-app.post('/users', (req, res) => {
+app.post('/users/michelle', (req, res) => {
   console.log(req.body);
 
   db.run(
-    'REPLACE INTO users_to_agenda VALUES ($testcourse, $testlocation)',
+    'UPDATE users_to_agenda SET testcourse=$testcourse, testlocation=$testlocation',
     // parameters to SQL query:
     {
-      $testcourse: req.body.name,
-      $testlocation: req.body.location,
+      $testcourse: req.body.testcourse,
+      $testlocation: req.body.testlocation,
     },
     // callback function to run when the query finishes:
     (err) => {

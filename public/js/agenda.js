@@ -14,7 +14,8 @@ $('a.studentBtn').click(function() {
       $('#location2').html(data.location2);
       $('#class3').html(data.coursename3);
       $('#location3').html(data.location3);
-      //$('#class4').html(data.testcourse);
+      $('#class4').html(data.testcourse);
+      $('#location4').html(data.testlocation);
     },
   });
 });
