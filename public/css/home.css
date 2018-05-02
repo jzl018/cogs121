@@ -30,8 +30,10 @@
 }
 
 #googleMaps {
-    height: 400px;
+    height: 100%;
+    width: 100%;
+    position: absolute;
 }
 
 #map {
-    height: 90%;
+    height: 100%;
