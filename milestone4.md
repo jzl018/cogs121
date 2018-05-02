@@ -1,4 +1,4 @@
-SCREENSHOTS OF UI SKELETON:
+SCREENSHOTS OF UI SKELETON:  
 ![Screenshot of Home page](https://github.com/ltliang1/cogs121/blob/master/images/Milestone%204/Home.png)
 
 ![Screenshot of Home with Destination page](https://github.com/ltliang1/cogs121/blob/master/images/Milestone%204/Home%20with%20Destination.png)
