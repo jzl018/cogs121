@@ -46,3 +46,10 @@
 div.gm-style button {
   display: none;
 }
+
+#pac-input{
+  height: 6.5vh;
+  width: 90vw;
+  position: absolute;
+  top: 10px;
+}
