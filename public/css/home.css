@@ -42,3 +42,7 @@
 .gmnoprint {
   display: none;
 }
+
+div.gm-style button {
+  display: none;
+}
