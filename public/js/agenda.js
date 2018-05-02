@@ -32,6 +32,8 @@ $('a.studentBtn').click(function() {
             },
       success: (data) => {
         $('#status').html(data.message);
+        $('#insertNameBox').val('');
+        $('#insertLocationBox').val('');
       }
     });
   });
