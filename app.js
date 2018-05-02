@@ -3,6 +3,10 @@ const express = require('express');
 const path = require('path');
 const handlebars = require('express-handlebars');
 
+//sqlite database
+const sqlite3 = require('sqlite3');
+const db = new sqlite3.Database('agenda.db');
+
 //routes
 const login = require('./routes/login');
 const home = require('./routes/home');
@@ -24,7 +28,7 @@ app.get('/nextEvent', nextEvent.view);
 app.get('/agenda', agenda.view);
 app.get('/temp', temp.view);
 
-const fakeAgenda = {
+/*const fakeAgenda = {
   "michelle": {
     "classes":
       [
@@ -60,22 +64,59 @@ const fakeAgenda = {
       ]
     }
 };
+*/
 
 app.get('/users', (req, res) => {
-  const allStudents = Object.keys(fakeAgenda); // returns a list of object keys
-  console.log('allStudents is:', allStudents);
+  db.all('SELECT name from users_to_agenda', (err,rows) => {
+  console.log(rows);
+  const allStudents = rows.map(e => e.name);
+  console.log(allStudents);
   res.send(allStudents);
+  });
 });
 
 app.get('/users/:userid', (req, res) => {
   const nameToLookup = req.params.userid; // matches ':userid' above
-  const val = fakeAgenda[nameToLookup];
-  console.log(nameToLookup, '->', val); // for debugging
-  if (val) {
-    res.send(val);
-  } else {
-    res.send({}); // failed, so return an empty object instead of undefined
-  }
+
+  db.all(
+    'SELECT * FROM users_to_agenda WHERE name=$name',
+    //parameters to pass into SQL
+    {
+      $name: nameToLookup,
+    },
+    //callback function to run when query finishes:
+    (err, rows) => {
+      console.log(rows);
+      if (rows.length > 0){
+        res.send(rows[0]);
+      } else {
+        res.send({});
+      }
+    }
+  );
+});
+
+const bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded({extended: true})); // hook up with your app
+app.post('/users', (req, res) => {
+  console.log(req.body);
+
+  db.run(
+    'REPLACE INTO users_to_agenda VALUES ($testcourse, $testlocation)',
+    // parameters to SQL query:
+    {
+      $testcourse: req.body.name,
+      $testlocation: req.body.location,
+    },
+    // callback function to run when the query finishes:
+    (err) => {
+      if (err) {
+        res.send({message: 'error in app.post(/users)'});
+      } else {
+        res.send({message: 'successfully run app.post(/users)'});
+      }
+    }
+  );
 });
 
 app.listen(3000, () => {

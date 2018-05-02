@@ -8,12 +8,29 @@ $('a.studentBtn').click(function() {
     dataType: 'json',
     success: (data) => {
       console.log('You received some data!', data);
-      $('#class1').text(data.classes[0].courseName);
-      $('#location1').text(data.classes[0].location);
-      $('#class2').text(data.classes[1].courseName);
-      $('#location2').text(data.classes[1].location);
-      $('#class3').text(data.classes[2].courseName);
-      $('#location3').text(data.classes[2].location);
+      $('#class1').html(data.coursename);
+      $('#location1').html(data.location);
+      $('#class2').html(data.coursename2);
+      $('#location2').html(data.location2);
+      $('#class3').html(data.coursename3);
+      $('#location3').html(data.location3);
+      //$('#class4').html(data.testcourse);
     },
   });
 });
+
+  $('#insertButton').click(() => {
+    const requestURL = 'users/michelle';
+    $.ajax({
+      // all URLs are relative to http://localhost:3000/
+      url: requestURL,
+      type: 'POST', // <-- this is POST, not GET
+      data: {
+              testcourse: $('#insertNameBox').val(),
+              testlocation: $('#insertLocationBox').val(),
+            },
+      success: (data) => {
+        $('#status').html(data.message);
+      }
+    });
+  });
