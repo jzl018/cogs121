@@ -21,12 +21,12 @@ function initMap() {
   	let input =	document.getElementById('pac-input');
   	map.controls[google.maps.ControlPosition.TOP_CENTER].push(input);
 
-  	// let searchBox = new google.maps.places.SearchBox(
-   //  	/** @type {HTMLInputElement} */
-   //  	(input));
+  	let searchBox = new google.maps.places.SearchBox(
+     	/** @type {HTMLInputElement} */
+     	(input));
 
-    let autocomplete = new google.maps.places.Autocomplete(input);
-    autocomplete.bindTo('bounds', map);
+    // let autocomplete = new google.maps.places.Autocomplete(input);
+    // autocomplete.bindTo('bounds', map);
 
     infoWindow = new google.maps.InfoWindow;
     infoWindow.setOptions({maxWidth:100});
@@ -62,9 +62,8 @@ function initMap() {
 
   	// Listen for the event fired when the user selects an item from the
   	// pick list. Retrieve the matching places for that item.
-  	autocomplete.addListener('places_changed', () => {
-        console.log('i am here');
-    	let places = autocomplete.getPlace();
+  	searchBox.addListener('places_changed', () => {
+    	let places = searchBox.getPlaces();
 
     	if (places.length == 0) {
       		return;
@@ -90,8 +89,6 @@ function initMap() {
 	      	bounds.extend(currentPos);
 	    };
     	map.fitBounds(bounds);
-        let origZoom = map.getZoom();
-        map.setZoom(origZoom - 1);
  	 });
   	//[END region_getplaces]
 };
