@@ -1,7 +1,6 @@
 let ucsd_ltlng = {lat:32.88317815150233, lng:-117.24126615311246};
 let addMarker = 0;
 let currentPos = {};
-let origin = {};
 
 function initMap() {
 
@@ -21,7 +20,6 @@ function initMap() {
           lat: position.coords.latitude,
           lng: position.coords.longitude
         };
-        origin = currentPos;
 
         let currentLoc = new google.maps.Marker({
             position: currentPos,
@@ -63,7 +61,7 @@ function initMap() {
         destination = place.place_id;
         
         directionsService.route({
-            origin: origin,
+            origin: currentPos,
             destination: {'placeId': destination},
             travelMode: 'WALKING'
         }, function(response, status) {
