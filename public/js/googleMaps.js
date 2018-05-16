@@ -6,6 +6,12 @@ let myLocCircle = null;
 let infoWindow = null;
 let trackInterval = null;
 
+let tracking = false;
+
+let directionsDiv = document.getElementById('directions');
+let actionImg = document.getElementById('actionImg');
+let actionBtn = document.getElementById('agenda');
+
 function initMap() {
 
     //Create a map object and specify the DOM element for display.
@@ -28,6 +34,7 @@ function initMap() {
     let directionsService = new google.maps.DirectionsService;
     let directionsDisplay = new google.maps.DirectionsRenderer;
     directionsDisplay.setMap(map);
+    directionsDisplay.setPanel(directionsDiv);
 
     autocomplete.addListener('place_changed', function() {
         let place = autocomplete.getPlace();
@@ -46,6 +53,7 @@ function initMap() {
         }, function(response, status) {
             if (status === 'OK') {
                 directionsDisplay.setDirections(response);
+                changeAction();
             } else {
                 window.alert('Directions request failed due to ' + status);
             }
@@ -62,15 +70,35 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
 }
 
 function nextEvent() {
-    
+
 }
 
-function constTrack() {
-    trackInterval = setInterval(() => { getLocation(); }, 3000);
+function showDirections() {
+    if (directionsDiv.style.zIndex == 999)
+        directionsDiv.style.zIndex = -1;
+    else
+        directionsDiv.style.zIndex = 999;
 }
 
-function stopTrack() {
-    clearInterval(trackInterval);
+function changeAction() {
+    actionImg.src = "images/play-button.png";
+    actionImg.style.right = "-1px";
+}
+
+function startStopTrack() {
+    if (tracking){
+        tracking = false;
+        clearInterval(trackInterval);
+        actionImg.src = "images/play-button.png";
+    } else {
+
+        map.setCenter(currentPos);
+        map.setZoom(18);
+
+        tracking = true;
+        trackInterval = setInterval(() => { getLocation(); }, 3000);
+        actionImg.src = "images/pause-button.png";
+    }
 }
 
 function getLocation() {
