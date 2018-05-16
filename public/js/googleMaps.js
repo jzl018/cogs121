@@ -1,11 +1,15 @@
 let ucsd_ltlng = {lat:32.88317815150233, lng:-117.24126615311246};
-let addMarker = 0;
-let currentPos = {};
+let map = null;
+let currentPos = null;
+let currentLoc = null;
+let myLocCircle = null;
+let infoWindow = null;
+let trackInterval = null;
 
 function initMap() {
 
     //Create a map object and specify the DOM element for display.
-    let map = new google.maps.Map(document.getElementById('map'), {
+    map = new google.maps.Map(document.getElementById('map'), {
         center: ucsd_ltlng,
         zoom: 14
     });
@@ -13,32 +17,7 @@ function initMap() {
     infoWindow = new google.maps.InfoWindow;
     infoWindow.setOptions({maxWidth:100});
 
-    // Try HTML5 geolocation.
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(function(position) {
-        currentPos = {
-          lat: position.coords.latitude,
-          lng: position.coords.longitude
-        };
-
-        let currentLoc = new google.maps.Marker({
-            position: currentPos,
-            map: map,
-            title: "Current Location"
-        });
-
-        infoWindow.setPosition(currentPos);
-        infoWindow.setContent('Location found.');
-        infoWindow.open(map);
-        map.setCenter(currentPos);
-        map.setZoom(18);
-      }, function() {
-        handleLocationError(true, infoWindow, map.getCenter());
-      });
-    } else {
-      // Browser doesn't support Geolocation
-      handleLocationError(false, infoWindow, map.getCenter());
-    }
+    getLocation();
 
     let input = document.getElementById('pac-input');
     map.controls[google.maps.ControlPosition.TOP_CENTER].push(input);
@@ -51,7 +30,7 @@ function initMap() {
     directionsDisplay.setMap(map);
 
     autocomplete.addListener('place_changed', function() {
-        var place = autocomplete.getPlace();
+        let place = autocomplete.getPlace();
 
         if (!place.place_id) {
             window.alert("Please select an option from the dropdown list.");
@@ -80,4 +59,62 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
                           'Error: The Geolocation service failed.' :
                           'Error: Your browser doesn\'t support geolocation.');
     infoWindow.open(map);
+}
+
+function nextEvent() {
+    
+}
+
+function constTrack() {
+    trackInterval = setInterval(() => { getLocation(); }, 3000);
+}
+
+function stopTrack() {
+    clearInterval(trackInterval);
+}
+
+function getLocation() {
+    console.log("updating location!!");
+
+    // Try HTML5 geolocation.
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition((position) => {
+
+            currentPos = {
+              lat: position.coords.latitude,
+              lng: position.coords.longitude
+            };
+
+            if (currentLoc == null) {
+                currentLoc = new google.maps.Marker({
+                    position: currentPos,
+                    map: map,
+                    title: "Current Location",
+                    icon: "http://www.robotwoods.com/dev/misc/bluecircle.png"
+                });
+
+                myLocCircle = new google.maps.Circle({
+                    strokeColor: '#009FFF',
+                    strokeOpacity: 0.6,
+                    strokeWeight: 1.5,
+                    fillColor: '#009FFF',
+                    fillOpacity: 0.25,
+                    map: map,
+                    center: currentPos,
+                    radius: 20
+                });
+            } else {
+                currentLoc.setPosition(currentPos);
+                myLocCircle.setCenter(currentPos);
+            }
+
+            map.setCenter(currentPos);
+            map.setZoom(18);
+        }, function() {
+            handleLocationError(true, infoWindow, map.getCenter());
+        });
+    } else {
+        // Browser doesn't support Geolocation
+        handleLocationError(false, infoWindow, map.getCenter());
+    }
 }
