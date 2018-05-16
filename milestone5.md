@@ -50,8 +50,5 @@ they need to take to get to there.
 
 
 Action #2:
-...updating agenda?
-
-*note must be able to explain code for these actions
-*actions are part of core functionality
-*actions differ in significant way
+Users can add and delete events in their agenda, and these changes will be
+saved in the database.
