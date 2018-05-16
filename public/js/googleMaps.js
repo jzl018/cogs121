@@ -1,14 +1,21 @@
+let ucsd_ltlng = {lat:32.88317815150233, lng:-117.24126615311246};
+let addMarker = 0;
+let currentPos = {};
+
 function initMap() {
 	//Added this
 	let markers = [];
 
-	let ucsd_ltlng = {lat:32.88317815150233, lng:-117.24126615311246};
-
+//	let ucsd_ltlng = {lat:32.88317815150233, lng:-117.24126615311246};
+	let directionsService = new google.maps.DirectionsService;
+	let directionsDisplay = new google.maps.DirectionsRenderer;
 	//Create a map object and specify the DOM element for display.
 	let map = new google.maps.Map(document.getElementById('map'), {
 		center: ucsd_ltlng,
 		zoom: 14
 	});
+	directionsDisplay.setMap(map);
+
 
 	// Default marker at HSS
 	// var marker = new google.maps.Marker({
@@ -31,7 +38,7 @@ function initMap() {
     infoWindow = new google.maps.InfoWindow;
     infoWindow.setOptions({maxWidth:100});
 
-    let currentPos = {};
+//    let currentPos = {};
 
     // Try HTML5 geolocation.
     if (navigator.geolocation) {
@@ -77,7 +84,8 @@ function initMap() {
     	let bounds = new google.maps.LatLngBounds();
     	for (let i = 0, place; place = places[i]; i++) {
 		    // Create a marker for each place.
-		    let addMarker = new google.maps.Marker({
+//		    let addMarker = new google.maps.Marker({
+				addMarker = new google.maps.Marker({
 		      map: map,
 		      title: place.name,
 		      position: place.geometry.location
@@ -89,9 +97,28 @@ function initMap() {
 	      	bounds.extend(currentPos);
 	    };
     	map.fitBounds(bounds);
+
+			calculateAndDisplayRoute(directionsService, directionsDisplay);
  	 });
   	//[END region_getplaces]
 };
+
+function calculateAndDisplayRoute(directionsService, directionsDisplay) {
+	console.log("Hello world")
+	directionsService.route({
+		origin: currentPos,
+		destination: addMarker.position,
+		travelMode: 'WALKING'
+	},
+	function(response, status) {
+		if (status === 'OK') {
+			directionsDisplay.setDirections(response);
+			}
+			else {
+				window.alert('Directions request failed due to ' + status);
+			}
+	});
+}
 
 function handleLocationError(browserHasGeolocation, infoWindow, pos) {
     infoWindow.setPosition(pos);
