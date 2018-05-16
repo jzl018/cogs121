@@ -17,6 +17,12 @@ SCREENSHOTS:
 
 
 
+![Screenshot of Agenda: delete button](https://github.com/ltliang1/cogs121/blob/master/images/Milestone5/Screen%20Shot%202018-05-16%20at%204.07.25%20AM.png)
+
+
+
+![Screenshot of Agenda: added new events](https://github.com/ltliang1/cogs121/blob/master/images/Milestone5/Screen%20Shot%202018-05-16%20at%204.08.07%20AM.png)
+
 
 HOW UI HAS IMPROVED SINCE MILESTONE 4:
 
