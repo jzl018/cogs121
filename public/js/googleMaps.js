@@ -1,8 +1,9 @@
-function initMap() {
-	//Added this
-	let markers = [];
+let ucsd_ltlng = {lat:32.88317815150233, lng:-117.24126615311246};
+let addMarker = 0;
+let currentPos = {};
+let origin = {};
 
-	let ucsd_ltlng = {lat:32.88317815150233, lng:-117.24126615311246};
+function initMap() {
 
 	//Create a map object and specify the DOM element for display.
 	let map = new google.maps.Map(document.getElementById('map'), {
@@ -13,8 +14,6 @@ function initMap() {
     infoWindow = new google.maps.InfoWindow;
     infoWindow.setOptions({maxWidth:100});
 
-    let currentPos = {};
-    let origin = {};
     // Try HTML5 geolocation.
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(function(position) {
