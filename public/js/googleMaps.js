@@ -10,29 +10,11 @@ function initMap() {
 		zoom: 14
 	});
 
-	// Default marker at HSS
-	// var marker = new google.maps.Marker({
-	// 	position: ucsd_ltlng,
-	// 	map:map,
-	// 	title: "HSS"
-	// });
-
-	// Create the search box and link it to the UI element.
-  	let input =	document.getElementById('pac-input');
-  	map.controls[google.maps.ControlPosition.TOP_CENTER].push(input);
-
-  	let searchBox = new google.maps.places.SearchBox(
-     	/** @type {HTMLInputElement} */
-     	(input));
-
-    // let autocomplete = new google.maps.places.Autocomplete(input);
-    // autocomplete.bindTo('bounds', map);
-
     infoWindow = new google.maps.InfoWindow;
     infoWindow.setOptions({maxWidth:100});
 
     let currentPos = {};
-
+    let origin = {};
     // Try HTML5 geolocation.
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(function(position) {
@@ -40,6 +22,7 @@ function initMap() {
           lat: position.coords.latitude,
           lng: position.coords.longitude
         };
+        origin = currentPos;
 
         let currentLoc = new google.maps.Marker({
             position: currentPos,
@@ -60,38 +43,39 @@ function initMap() {
       handleLocationError(false, infoWindow, map.getCenter());
     }
 
-  	// Listen for the event fired when the user selects an item from the
-  	// pick list. Retrieve the matching places for that item.
-  	searchBox.addListener('places_changed', () => {
-    	let places = searchBox.getPlaces();
+    let input = document.getElementById('pac-input');
+    map.controls[google.maps.ControlPosition.TOP_CENTER].push(input);
 
-    	if (places.length == 0) {
-      		return;
-    	}
-    	for (let i = 0, newMarker; newMarker = markers[i]; i++) {
-      		newMarker.setMap(null);
-    	}
+    let autocomplete = new google.maps.places.Autocomplete(input, {placeIdOnly: true});
+    autocomplete.bindTo('bounds', map);
 
-    	// For each place, get the icon, place name, and location.
-    	//markers = [];
-    	let bounds = new google.maps.LatLngBounds();
-    	for (let i = 0, place; place = places[i]; i++) {
-		    // Create a marker for each place.
-		    let addMarker = new google.maps.Marker({
-		      map: map,
-		      title: place.name,
-		      position: place.geometry.location
-		    });
+    let directionsService = new google.maps.DirectionsService;
+    let directionsDisplay = new google.maps.DirectionsRenderer;
+    directionsDisplay.setMap(map);
 
-	      	markers.push(addMarker);
+    autocomplete.addListener('place_changed', function() {
+        var place = autocomplete.getPlace();
 
-	      	bounds.extend(place.geometry.location);
-	      	bounds.extend(currentPos);
-	    };
-    	map.fitBounds(bounds);
- 	 });
-  	//[END region_getplaces]
-};
+        if (!place.place_id) {
+            window.alert("Please select an option from the dropdown list.");
+            return;
+        }
+        
+        destination = place.place_id;
+        
+        directionsService.route({
+            origin: origin,
+            destination: {'placeId': destination},
+            travelMode: 'WALKING'
+        }, function(response, status) {
+            if (status === 'OK') {
+                directionsDisplay.setDirections(response);
+            } else {
+                window.alert('Directions request failed due to ' + status);
+            }
+        });
+    });
+}
 
 function handleLocationError(browserHasGeolocation, infoWindow, pos) {
     infoWindow.setPosition(pos);
