@@ -34,15 +34,17 @@
 
     <input id="pac-input" placeholder="Search for a location"></input>
 
-    <div id="nextEvent" onclick="location.href='nextEvent'">
+    <div id="directions"></div>
+
+    <div id="nextEvent" onclick="showDirections()">
       <h5 id="nextTitle">Next Event -</h5>
       <h2 id="eventTitle">COGS 121</h2>
       <h6 id="eventLoc">HSS 1330</h6>
     </div>
 
-    <a href="agenda">
+    <a href="javascript:startStopTrack()">
       <div id="agenda">
-        <img src="images/calendar_white.png" />
+        <img id="actionImg" src="images/calendar_white.png" />
       </div>
     </a>
 
