@@ -5,11 +5,11 @@ let origin = {};
 
 function initMap() {
 
-	//Create a map object and specify the DOM element for display.
-	let map = new google.maps.Map(document.getElementById('map'), {
-		center: ucsd_ltlng,
-		zoom: 14
-	});
+    //Create a map object and specify the DOM element for display.
+    let map = new google.maps.Map(document.getElementById('map'), {
+        center: ucsd_ltlng,
+        zoom: 14
+    });
 
     infoWindow = new google.maps.InfoWindow;
     infoWindow.setOptions({maxWidth:100});
