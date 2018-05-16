@@ -1,9 +1,17 @@
 SCREENSHOTS:
+
+
 ![Screenshot of Home: current location](https://github.com/ltliang1/cogs121/blob/master/images/Milestone5/Screen%20Shot%202018-05-16%20at%203.36.28%20AM.png)
+
+
 
 ![Screenshot of Home: walkable route](https://github.com/ltliang1/cogs121/blob/master/images/Milestone5/Screen%20Shot%202018-05-16%20at%203.36.51%20AM.png)
 
+
+
 ![Screenshot of Home: tracking location](https://github.com/ltliang1/cogs121/blob/master/images/Milestone5/Screen%20Shot%202018-05-16%20at%203.37.03%20AM.png)
+
+
 
 ![Screenshot of Home: list of directions](https://github.com/ltliang1/cogs121/blob/master/images/Milestone5/Screen%20Shot%202018-05-16%20at%203.37.19%20AM.png)
 
@@ -42,8 +50,5 @@ they need to take to get to there.
 
 
 Action #2:
-...updating agenda?
-
-*note must be able to explain code for these actions
-*actions are part of core functionality
-*actions differ in significant way
+Users can add and delete events in their agenda, and these changes will be
+saved in the database.
