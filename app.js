@@ -67,9 +67,9 @@ app.get('/temp', temp.view);
 */
 
 app.get('/users', (req, res) => {
-  db.all('SELECT name from users_to_agenda', (err,rows) => {
+  db.all('SELECT * from users_to_agenda', (err,rows) => {
   console.log(rows);
-  const allStudents = rows.map(e => e.name);
+  const allStudents = rows.map(e => '<h2>' + e.name + '</h2> '+ '<h4 style="margin-left: 20px">' + 'Location: ' + e.location + '</h4>' + '<br>');
   console.log(allStudents);
   res.send(allStudents);
   });
@@ -98,15 +98,35 @@ app.get('/users/:userid', (req, res) => {
 
 const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({extended: true})); // hook up with your app
-app.post('/users/michelle', (req, res) => {
+app.post('/users', (req, res) => {
   console.log(req.body);
 
   db.run(
-    'UPDATE users_to_agenda SET testcourse=$testcourse, testlocation=$testlocation',
+    'INSERT INTO users_to_agenda VALUES ($name, $location)',
     // parameters to SQL query:
     {
-      $testcourse: req.body.testcourse,
-      $testlocation: req.body.testlocation,
+      $name: req.body.name,
+      $location: req.body.location,
+    },
+    // callback function to run when the query finishes:
+    (err) => {
+      if (err) {
+        res.send({message: 'error in app.post(/users)'});
+      } else {
+        res.send({message: 'successfully run app.post(/users)'});
+      }
+    }
+  );
+});
+
+app.post('/users/Delete', (req, res) => {
+  console.log(req.body);
+
+  db.run(
+    'DELETE FROM users_to_agenda WHERE name=$name',
+    // parameters to SQL query:
+    {
+      $name: req.body.name,
     },
     // callback function to run when the query finishes:
     (err) => {

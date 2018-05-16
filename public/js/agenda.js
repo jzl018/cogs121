@@ -1,6 +1,5 @@
-$('a.studentBtn').click(function() {
-  const requestURL = 'users/' + $(this).attr('id');
-  console.log('making ajax request to:', requestURL);
+$('#Events').click(function() {
+/*  console.log('making ajax request to:', requestURL);
 
   $.ajax({
     url: requestURL,
@@ -15,23 +14,46 @@ $('a.studentBtn').click(function() {
       $('#class3').html(data.coursename3);
       $('#location3').html(data.location3);
       $('#class4').html(data.testcourse);
-      $('#location4').html(data.testlocation);
+      $('#location4').html(data.testlocation);*/
+  $.ajax({
+    url: 'users',
+    type: 'GET',
+    dataType: 'json',
+    success: (data) => {
+      console.log("data:", data);
+      $('#agenda').html(data);
     },
   });
 });
 
   $('#insertButton').click(() => {
-    const requestURL = 'users/michelle';
+
     $.ajax({
       // all URLs are relative to http://localhost:3000/
-      url: requestURL,
+      url: 'users',
       type: 'POST', // <-- this is POST, not GET
       data: {
-              testcourse: $('#insertNameBox').val(),
-              testlocation: $('#insertLocationBox').val(),
+              name: $('#insertNameBox').val(),
+              location: $('#insertLocationBox').val()
             },
       success: (data) => {
-        $('#status').html(data.message);
+
+        $('#insertNameBox').val('');
+        $('#insertLocationBox').val('');
+      }
+    });
+  });
+
+  $('#deleteButton').click(() => {
+
+    $.ajax({
+      url: 'users/Delete',
+      type: 'POST',
+      data: {
+        name: $('#insertNameBox').val(),
+      },
+      success: (data) => {
+
         $('#insertNameBox').val('');
         $('#insertLocationBox').val('');
       }
