@@ -37,7 +37,7 @@ $('#Events').click(function() {
               location: $('#insertLocationBox').val()
             },
       success: (data) => {
-
+        $('#Events').trigger('click');
         $('#insertNameBox').val('');
         $('#insertLocationBox').val('');
       }
@@ -53,7 +53,7 @@ $('#Events').click(function() {
         name: $('#insertNameBox').val(),
       },
       success: (data) => {
-
+        $('#Events').trigger('click');
         $('#insertNameBox').val('');
         $('#insertLocationBox').val('');
       }
