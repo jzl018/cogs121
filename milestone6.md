@@ -17,8 +17,8 @@ text, i.e. typing in "WLH 2001," where the database stored that exact text.
 Now, we can simply type in "War" into the text box, and it will autocomplete 
 the event location, where "Warren Lecture Hall" is the first choice. When we
 add the event after selecting "Warren Lecture Hall" in the dropdown of
-autocompleted names, the event's location is stored as that selected location,
-i.e. "Warren Lecture Hall."
+autocompleted names, the event's location is stored in our agenda as that 
+selected location, i.e. "Warren Lecture Hall" in this example.
 
 Our login page also provides the user more interactive opportunities. Try to 
 "Create an Account" and see the nice surprise. Note that there is no true
