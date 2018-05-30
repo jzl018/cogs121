@@ -31,8 +31,8 @@ as opposed to the pre-defined location (HSS) we gave the user before this
 milestone.
 
 Also, before, when the user inputted a destination, the app only created two 
-markers:one at a pre-defined location (HSS) and the other at the inputted 
-destination,then recentered the map based on these two markers. Now, when the 
+markers: one at a pre-defined location (HSS) and the other at the inputted 
+destination, then recentered the map based on these two markers. Now, when the 
 user inputs a destination, the app connects the user's CURRENT LOCATION and 
 this inputted destination with a walkable route.
 
