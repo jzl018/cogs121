@@ -8,10 +8,27 @@ body {
   justify-content: center;
 }
 
-#sign-out {
+#signoutWrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   position: absolute;
-  bottom: 10px;
-  left: 10px;
+  padding: 5px;
+  height: 40px;
+  width: 40px;
+  top: 23px;
+  left: 13px;
+  background: white;
+  border-radius: 50%;
+}
+
+#signout {
+  height: 20px;
+  width: 20px;
+  position: absolute;
+
+  transform: rotate(180deg) translateX(2px);
 }
 
 .profile div {
@@ -40,8 +57,9 @@ div.gm-style button {
 
 #pac-input{
   height: 6.5vh;
-  width: 90vw;
+  width: 80vw;
   margin-top: 18px;
+  margin-right: 18px;
   background-color: #fff;
   font-family: Roboto;
   font-size: 20px;

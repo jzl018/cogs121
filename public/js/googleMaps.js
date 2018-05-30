@@ -26,7 +26,7 @@ function initMap() {
     getLocation();
 
     let input = document.getElementById('pac-input');
-    map.controls[google.maps.ControlPosition.TOP_CENTER].push(input);
+    map.controls[google.maps.ControlPosition.TOP_RIGHT].push(input);
 
     let autocomplete = new google.maps.places.Autocomplete(input, {placeIdOnly: true});
     autocomplete.bindTo('bounds', map);
