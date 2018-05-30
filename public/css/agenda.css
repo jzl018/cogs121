@@ -3,9 +3,9 @@
   padding: 0;
 }
 
-#backHome {
-  margin-top: 10px;
-  margin-left: 10px;
+#title {
+  text-align: center;
+  margin-top: 22px;
 }
 
 .studentBtn {
@@ -16,4 +16,50 @@
 #agenda {
   margin-left: 10px;
   margin-top: 10px;
+}
+
+/*#googleMaps {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  opacity: 0;
+}
+
+#map {
+  height: 100%;
+  opacity: 0;
+}*/
+
+#pac-input{
+  height: 6.5vh;
+  width: 80vw;
+  background-color: #fff;
+  font-family: Roboto;
+  font-size: 20px;
+  font-weight: 300;
+  text-overflow: ellipsis;
+}
+
+#signoutWrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: absolute;
+  padding: 5px;
+  height: 40px;
+  width: 40px;
+  top: 23px;
+  left: 13px;
+  background: lightgrey;
+  border-radius: 50%;
+}
+
+#signout {
+  height: 20px;
+  width: 20px;
+  position: absolute;
+
+
+  transform: rotate(180deg) translateX(2px);
 }

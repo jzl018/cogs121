@@ -1,6 +1,9 @@
 $('#signupButton').click(() => {
 
     const title = $('#title');
+
+    console.log(title);
+
     const img = $('img');
     const imgURL = img.attr('src');
 
@@ -14,5 +17,4 @@ $('#signupButton').click(() => {
 
     $('#easteregg').html('you found an easteregg!! - michelle');
 
-    console.log('you found an easteregg!! - michelle');
 });
