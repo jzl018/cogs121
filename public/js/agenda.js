@@ -3,7 +3,6 @@ let calledFromOther = false;
 $('#Events').click(function() {
   const eventsButton = $("#Events");
   let buttonText = eventsButton.text();
-  console.log(buttonText);
 
   //const title = $('#Events.studentBtn btn btn-dark');
   //console.log(title);
@@ -59,9 +58,11 @@ $('#Events').click(function() {
   
 
   $('#insertButton').click(() => {
+    console.log($('#autocomplete').text());
+
+
     const eventsButton = $("#Events");
     let buttonText = eventsButton.text();
-    console.log(buttonText);
 
     $.ajax({
       // all URLs are relative to http://localhost:3000/
@@ -101,10 +102,15 @@ $('#Events').click(function() {
 
 function initAutocomplete() {
   geocoder = new google.maps.Geocoder();
+  
+  // let input = document.getElementById('autocomplete');
+  // let autocomplete = new google.maps.places.Autocomplete(input, {placeIdOnly: true});
+
+
   autocomplete = new google.maps.places.Autocomplete(
     (document.getElementById('autocomplete')), {
-      types: ['geocode']
-    });
+       types: ['geocode']
+     });
 
   autocomplete.addListener('place_changed', fillInAddress);
 }
