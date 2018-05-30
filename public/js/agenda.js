@@ -1,4 +1,9 @@
 $('#Events').click(function() {
+  const eventsButton = $("#Events");
+  let buttonText = eventsButton.text();
+
+  //const title = $('#Events.studentBtn btn btn-dark');
+  //console.log(title);
 /*  console.log('making ajax request to:', requestURL);
 
   $.ajax({
@@ -15,16 +20,26 @@ $('#Events').click(function() {
       $('#location3').html(data.location3);
       $('#class4').html(data.testcourse);
       $('#location4').html(data.testlocation);*/
-  $.ajax({
-    url: 'users',
-    type: 'GET',
-    dataType: 'json',
-    success: (data) => {
-      console.log("data:", data);
-      $('#agenda').html(data);
-    },
-  });
+  
+
+  if (buttonText=="See My Events") {
+    eventsButton.html("My Events");
+    $.ajax({
+      url: 'users',
+      type: 'GET',
+      dataType: 'json',
+      success: (data) => {
+        $('#agenda').html(data);
+        $('#agenda').show();
+      },
+    });
+  } else {
+    eventsButton.html("See My Events");
+    $('#agenda').hide();
+  }
 });
+
+  
 
   $('#insertButton').click(() => {
 
