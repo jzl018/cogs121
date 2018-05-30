@@ -1,6 +1,6 @@
 SCREENSHOTS OF LATEST UI WEBPAGES/DATA VISUALIZATION:
 
-![Screenshot of Home: current location](linkhere.com)
+![Screenshot of Home: Log Out Button](https://github.com/ltliang1/cogs121/blob/master/images/Milestone6/Log%20Out.png)
 
 
 
