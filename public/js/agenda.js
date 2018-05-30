@@ -1,6 +1,9 @@
+let calledFromOther = false;
+
 $('#Events').click(function() {
   const eventsButton = $("#Events");
   let buttonText = eventsButton.text();
+  console.log(buttonText);
 
   //const title = $('#Events.studentBtn btn btn-dark');
   //console.log(title);
@@ -34,14 +37,31 @@ $('#Events').click(function() {
       },
     });
   } else {
-    eventsButton.html("See My Events");
-    $('#agenda').hide();
+    if (!calledFromOther) {
+      eventsButton.html("See My Events");
+      $('#agenda').hide();
+    }
+    else {
+      $.ajax({
+        url: 'users',
+        type: 'GET',
+        dataType: 'json',
+        success: (data) => {
+          $('#agenda').html(data);
+          $('#agenda').show();
+        },
+      });
+      calledFromOther = false;
+    }
   }
 });
 
   
 
   $('#insertButton').click(() => {
+    const eventsButton = $("#Events");
+    let buttonText = eventsButton.text();
+    console.log(buttonText);
 
     $.ajax({
       // all URLs are relative to http://localhost:3000/
@@ -52,6 +72,7 @@ $('#Events').click(function() {
               location: $('#insertLocationBox').val()
             },
       success: (data) => {
+        calledFromOther = true;
         $('#Events').trigger('click');
         $('#insertNameBox').val('');
         $('#insertLocationBox').val('');
@@ -68,6 +89,7 @@ $('#Events').click(function() {
         name: $('#insertNameBox').val(),
       },
       success: (data) => {
+        calledFromOther = true;
         $('#Events').trigger('click');
         $('#insertNameBox').val('');
         $('#insertLocationBox').val('');
