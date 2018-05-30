@@ -4,6 +4,7 @@ SCREENSHOTS OF LATEST UI WEBPAGES/DATA VISUALIZATION:
 
 
 
+
 HOW UI HAS IMPROVED SINCE MILESTONE 5:
 On our agenda page, our Event Location text input box now takes in actual
 locations found using the Google Maps API. Before, it was just literal
@@ -13,3 +14,10 @@ the event location, where "Warren Lecture Hall" is the first choice. When we
 add the event after selecting "Warren Lecture Hall" in the dropdown of
 autocompleted names, the event's location is stored as that selected location,
 i.e. "Warren Lecture Hall."
+
+Our login page also provides the user more interactive opportunities. Try to 
+"Create an Account" and see the nice surprise. Note that there is no true
+functionality for this button. It is just a simple homage to our instructors.
+
+A simple addition to our UI is now ours users will have the ability to log out
+from the "home" page, using the new button in the upper lefthand corner.
