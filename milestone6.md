@@ -2,9 +2,11 @@ SCREENSHOTS OF LATEST UI WEBPAGES/DATA VISUALIZATION:
 
 Log Out Button:
 
- ![Screenshot of Home: Log Out Button](https://github.com/ltliang1/cogs121/blob/master/images/Milestone6/Log%20Out.png)
+![Screenshot of Home: Log Out Button](https://github.com/ltliang1/cogs121/blob/master/images/Milestone6/Log%20Out.png)
 
+Agenda: Automatic Display:
 
+![Screenshot of Home: Log Out Button]()
 
 
 
@@ -19,6 +21,10 @@ the event location, where "Warren Lecture Hall" is the first choice. When we
 add the event after selecting "Warren Lecture Hall" in the dropdown of
 autocompleted names, the event's location is stored in our agenda as that 
 selected location, i.e. "Warren Lecture Hall" in this example.
+
+Secondly, on our agenda page, the agenda is now automatically displayed, which
+eliminates our need to click a button that says "My Events," which is what we
+had to do before, to display the agenda.
 
 Our login page also provides the user more interactive opportunities. Try to 
 "Create an Account" and see the nice surprise. Note that there is no true
