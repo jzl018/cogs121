@@ -7,7 +7,10 @@ Log Out Button:
 
 
 
+
+
 HOW UI HAS IMPROVED SINCE MILESTONE 5:
+
 On our agenda page, our Event Location text input box now takes in actual
 locations found using the Google Maps API. Before, it was just literal
 text, i.e. typing in "WLH 2001," where the database stored that exact text.
