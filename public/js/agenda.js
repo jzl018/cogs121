@@ -1,6 +1,9 @@
+let calledFromOther = false;
+
 $('#Events').click(function() {
   const eventsButton = $("#Events");
   let buttonText = eventsButton.text();
+  console.log(buttonText);
 
   //const title = $('#Events.studentBtn btn btn-dark');
   //console.log(title);
@@ -34,14 +37,31 @@ $('#Events').click(function() {
       },
     });
   } else {
-    eventsButton.html("See My Events");
-    $('#agenda').hide();
+    if (!calledFromOther) {
+      eventsButton.html("See My Events");
+      $('#agenda').hide();
+    }
+    else {
+      $.ajax({
+        url: 'users',
+        type: 'GET',
+        dataType: 'json',
+        success: (data) => {
+          $('#agenda').html(data);
+          $('#agenda').show();
+        },
+      });
+      calledFromOther = false;
+    }
   }
 });
 
   
 
   $('#insertButton').click(() => {
+    const eventsButton = $("#Events");
+    let buttonText = eventsButton.text();
+    console.log(buttonText);
 
     $.ajax({
       // all URLs are relative to http://localhost:3000/
@@ -49,12 +69,13 @@ $('#Events').click(function() {
       type: 'POST', // <-- this is POST, not GET
       data: {
               name: $('#insertNameBox').val(),
-              location: $('#insertLocationBox').val()
+              location: autocomplete.getPlace().name
             },
       success: (data) => {
+        calledFromOther = true;
         $('#Events').trigger('click');
         $('#insertNameBox').val('');
-        $('#insertLocationBox').val('');
+        $('#autocomplete').val('');
       }
     });
   });
@@ -68,9 +89,41 @@ $('#Events').click(function() {
         name: $('#insertNameBox').val(),
       },
       success: (data) => {
+        calledFromOther = true;
         $('#Events').trigger('click');
         $('#insertNameBox').val('');
-        $('#insertLocationBox').val('');
+        $('#autocomplete').val('');
       }
     });
   });
+
+  var placeSearch, autocomplete, geocoder;
+
+function initAutocomplete() {
+  geocoder = new google.maps.Geocoder();
+  autocomplete = new google.maps.places.Autocomplete(
+    (document.getElementById('autocomplete')), {
+      types: ['geocode']
+    });
+
+  autocomplete.addListener('place_changed', fillInAddress);
+}
+
+function codeAddress(address) {
+  geocoder.geocode({
+    'address': address
+  }, function(results, status) {
+    if (status == 'OK') {
+      // This is the lat and lng results[0].geometry.location
+      alert(results[0].geometry.location);
+    } else {
+      alert('Geocode was not successful for the following reason: ' + status);
+    }
+  });
+}
+
+function fillInAddress() {
+  var place = autocomplete.getPlace();
+
+  //codeAddress(document.getElementById('autocomplete').value);
+}
