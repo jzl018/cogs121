@@ -6,7 +6,7 @@ Log Out Button:
 
 Agenda: Automatic Display:
 
-![Screenshot of Home: Log Out Button]()
+![Screenshot of Home: Log Out Button](https://github.com/ltliang1/cogs121/blob/master/images/Milestone6/Agenda.png)
 
 
 
