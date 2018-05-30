@@ -1,5 +1,6 @@
 SCREENSHOTS OF LATEST UI WEBPAGES/DATA VISUALIZATION:
 
+Log Out Button
 ![Screenshot of Home: Log Out Button](https://github.com/ltliang1/cogs121/blob/master/images/Milestone6/Log%20Out.png)
 
 
