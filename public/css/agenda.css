@@ -1,34 +1,26 @@
-* {
+html, body {
   margin: 0;
   padding: 0;
 }
 
+body {
+  padding: 40px;
+}
+
 #title {
   text-align: center;
-  margin-top: 27px;
+  margin-top: 0px;
+}
+
+#agenda {
+  max-height: 40vh;
+  overflow: scroll;
 }
 
 .studentBtn {
   margin-left: 10px;
   margin-top: 10px;
 }
-
-#agenda {
-  margin-left: 10px;
-  margin-top: 10px;
-}
-
-/*#googleMaps {
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  opacity: 0;
-}
-
-#map {
-  height: 100%;
-  opacity: 0;
-}*/
 
 #pac-input{
   height: 6.5vh;
@@ -49,9 +41,8 @@
   padding: 5px;
   height: 40px;
   width: 40px;
-  top: 23px;
+  top: 10px;
   left: 13px;
-  /*background: lightgrey;*/
   border-radius: 50%;
 
   margin-left: 10px;
@@ -70,13 +61,15 @@
     text-align: center;
 }
 
-#insertForm {
-    margin-top: 25px;
+#addEventForm {
+  width: 80vw;
+  position: fixed;
+  bottom: 50px;
 }
 
 .form-control {
-    margin-top: 20px;
-    text-align: center;
+  margin-top: 20px;
+  text-align: center;
 
-    height: 50px;
+  height: 50px;
 }
