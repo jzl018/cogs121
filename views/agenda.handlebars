@@ -2,7 +2,6 @@
 <html>
   <head>
     <title> agenda </title>
-
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- CSS -->
@@ -20,7 +19,7 @@
 
 
     <h1 id="title">AGENDA</h1>
-
+    <br>
     <!-- <div id="backHome">
       <a href="home" class="btn btn-dark">back to home</a>
     </div> -->
@@ -30,32 +29,35 @@
     </div>
 
     <div id="students">
+      <div id="center">
       <button id="Events" class="studentBtn btn btn-dark">See My Events</button>
+    </div>
   <!--    <a id="kenneth" href="javascript:void(0)" class="studentBtn btn btn-dark">kenneth</a> -->
     </div>
 
     <!--<a id="newEvent" href="javascript:void(0)" class="btn btn-dark" style="margin-left: 10px; margin-top: 10px">Add new Event</a> -->
+
     <div id="agenda">
-
     </div>
 
-    <br><br>
-
     <br>
-    <div style="margin-left: 10px">
-
-      Name: <input id="insertNameBox" type="text" size="20"/>
-    </div>
     <br>
-    <div style="margin-left: 10px">
+      <div class="center">
+        <input id="insertNameBox" class="form-control" type="text" size="30" placeholder="Name"/>
+      </div>
+
+    <div class="center">
       <div id="locationField">
-        Location: <input id="autocomplete" placeholder="Enter your address" type="text" size="50"/>
+        <input id="autocomplete" class="form-control" placeholder="Enter your address" type="text" size="30"/>
       </div>
     </div>
-    <br>
 
-    <button id="insertButton" class="btn btn-dark" style="margin-left: 10px">Add new event</button>
-    <button id="deleteButton" class="btn btn-dark" style="margin-left: 10px">Delete event</button>
+    <form id="insertForm">
+    <div id="center">
+      <button id="insertButton" class="btn btn-dark" style="margin-left: 10px">Add new event</button>
+      <button id="deleteButton" class="btn btn-dark" style="margin-left: 10px">Delete event</button>
+    </div>
+  </form>
 
     <!-- jQuery, Popper, and Bootstrap -->
     <script src="js/jquery-3.3.1.js"></script>
