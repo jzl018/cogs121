@@ -22,7 +22,7 @@ $('#Events').click(function() {
       $('#location3').html(data.location3);
       $('#class4').html(data.testcourse);
       $('#location4').html(data.testlocation);*/
-  
+
 
   if (buttonText=="See My Events") {
     eventsButton.html("My Events");
@@ -55,7 +55,7 @@ $('#Events').click(function() {
   }
 });
 
-  
+
 
   $('#insertButton').click(() => {
     console.log($('#autocomplete').text());
@@ -102,7 +102,7 @@ $('#Events').click(function() {
 
 function initAutocomplete() {
   geocoder = new google.maps.Geocoder();
-  
+
   // let input = document.getElementById('autocomplete');
   // let autocomplete = new google.maps.places.Autocomplete(input, {placeIdOnly: true});
 
