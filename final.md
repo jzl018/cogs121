@@ -66,6 +66,7 @@
 
 6) home.js
 -Gets the first event from database and sends the data to display to div "eventTitle".
+
 /routes
 For the following .js files, functionality: GETS the respective page via app.js
 6) agenda.js
