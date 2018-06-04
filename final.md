@@ -23,6 +23,7 @@
 ~~~~~~~~~~~~~~~~~~~~~~~ SOURCE CODE FILES ~~~~~~~~~~~~~~~~~~~~~~~
 
 ******** HANDLEBARS ********
+
 /views
 1) login.handlebars
 - Sets up forms for email and password
@@ -68,13 +69,18 @@
 -Gets the first event from database and sends the data to display to div "eventTitle".
 
 /routes
+
 For the following .js files, functionality: GETS the respective page via app.js
+
 6) agenda.js
+
 7) home.js
+
 8) login.js
 
 ******** CSS ********
-/public/css
+
+public/css
 1) agenda.css
 - Formats sign out button to be upper left corner
 - Centers event name/location forms
@@ -92,5 +98,6 @@ For the following .js files, functionality: GETS the respective page via app.js
 - Makes image circular
 
 ~~~~~~~~~~~~~~~~~~~~~~~ DEMO VIDEO ~~~~~~~~~~~~~~~~~~~~~~~
+
 Link: https://drive.google.com/file/d/1NHO-SRRA6wg_AWIjyjILCkVbZgp1bCfL/view?usp=sharing
 
