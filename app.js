@@ -1,3 +1,6 @@
+/*Defines all our GET methods for handlebars. Has all the methods that handles
+changes to our database*/
+
 // module dependencies
 const express = require('express');
 const path = require('path');
@@ -28,9 +31,9 @@ app.get('/agenda', agenda.view);
 app.get('/users', (req, res) => {
   db.all('SELECT * from users_to_agenda', (err,rows) => {
   console.log(rows);
-  const allStudents = rows.map(e => '<h2>' + e.name + '</h2> '+ '<h4 style="margin-left: 20px">' + 'Location: ' + e.location + '</h4>' + '<br>');
-  console.log(allStudents);
-  res.send(allStudents);
+  const allEvents = rows.map(e => '<h2>' + e.name + '</h2> '+ '<h4 style="margin-left: 20px">' + 'Location: ' + e.location + '</h4>' + '<br>');
+  console.log(allEvents);
+  res.send(allEvents);
   });
 });
 

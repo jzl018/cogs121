@@ -31,8 +31,7 @@
 - Allows users to sign out
 - Sets up Google Maps API: displays map and search bar
 - Shows the "next event" on the bottom
-- Shows directions to inputted destination upon clicking the white portion
-  of the bottom
+- Shows directions to inputted destination upon clicking the direction button
 - Starts/stop tracking current location after clicking "play" button
 
 3) agenda.handlebars
@@ -43,9 +42,8 @@
 ******** JAVASCRIPT ********
 
 1) app.js
-- Creates SQLite database
 - Defines GET methods for all of our handlebars
-- Handles all SQLite database changes
+- Handles all SQLite database changes methods.
 
 
 2) database.js
@@ -66,6 +64,8 @@
 - Toggles image/title between Philip Guo and Sean Kross upon clicking "Create
   New Account"
 
+6) home.js
+-Gets the first event from database and sends the data to display to div "eventTitle".
 /routes
 For the following .js files, functionality: GETS the respective page via app.js
 6) agenda.js

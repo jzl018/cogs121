@@ -1,3 +1,8 @@
+/* Defines the functions needed for our agenda page such as displaying the data,
+inserting new data, and deleting data. Also has the function that autocompletes
+in location for the location input for an event.
+*/
+
 $(document).ready(() => {
   reloadAgenda();
 });

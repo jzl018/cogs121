@@ -1,3 +1,8 @@
+/* Creates the map displayed in our home, where the center is at user's current
+location. Constructs the path between current location and the inputted
+destination. This path is automatically set to walking directions. Location
+will be tracked every 5 seconds after triggering the function.
+*/
 let map = null;
 let currentPos = null;
 let currentLoc = null;
@@ -42,9 +47,9 @@ function initMap() {
             window.alert("Please select an option from the dropdown list.");
             return;
         }
-        
+
         destination = place.place_id;
-        
+
         directionsService.route({
             origin: currentPos,
             destination: {'placeId': destination},

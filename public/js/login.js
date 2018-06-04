@@ -1,3 +1,6 @@
+/* Has function that will toggle image/titles between Philip Guo and Sean
+Kross upon clicking the sign up button. 
+*/
 $('#signupButton').click(() => {
 
     const title = $('#title');
