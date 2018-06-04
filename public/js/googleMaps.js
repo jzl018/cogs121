@@ -1,4 +1,3 @@
-let ucsd_ltlng = {lat:32.88317815150233, lng:-117.24126615311246};
 let map = null;
 let currentPos = null;
 let currentLoc = null;
@@ -14,16 +13,16 @@ let actionBtn = document.getElementById('agenda');
 
 function initMap() {
 
+    getLocation();
+
     //Create a map object and specify the DOM element for display.
     map = new google.maps.Map(document.getElementById('map'), {
-        center: ucsd_ltlng,
+        center: currentPos,
         zoom: 14
     });
 
     infoWindow = new google.maps.InfoWindow;
     infoWindow.setOptions({maxWidth:100});
-
-    getLocation();
 
     let input = document.getElementById('pac-input');
     map.controls[google.maps.ControlPosition.TOP_RIGHT].push(input);
@@ -69,9 +68,6 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
     infoWindow.open(map);
 }
 
-function nextEvent() {
-
-}
 
 function showDirections() {
     if (directionsDiv.style.zIndex == 999)
