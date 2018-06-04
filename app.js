@@ -10,9 +10,7 @@ const db = new sqlite3.Database('agenda.db');
 //routes
 const login = require('./routes/login');
 const home = require('./routes/home');
-const nextEvent = require('./routes/nextEvent');
 const agenda = require('./routes/agenda');
-const temp = require('./routes/temp');
 
 const app = express();
 
@@ -24,47 +22,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', login.view);
 app.get('/home', home.view);
-app.get('/nextEvent', nextEvent.view);
 app.get('/agenda', agenda.view);
-app.get('/temp', temp.view);
 
-/*const fakeAgenda = {
-  "michelle": {
-    "classes":
-      [
-        {
-          "courseName": "COGS 14B",
-          "location": "PCYN 109",
-        },
-        {
-          "courseName": "COGS 121",
-          "location": "HSS 1330",
-        },
-        {
-          "courseName": "CSE 100",
-          "location": "WLH 2001",
-        }
-      ]
-  },
-  "kenneth": {
-    "classes":
-      [
-        {
-          "courseName": "COGS 121",
-          "location": "HSS 1330",
-        },
-        {
-          "courseName": "COGS 107C",
-          "location": "PETER 108",
-        },
-        {
-          "courseName": "COGS 101C",
-          "location": "PETER 110",
-        }
-      ]
-    }
-};
-*/
 
 app.get('/users', (req, res) => {
   db.all('SELECT * from users_to_agenda', (err,rows) => {
