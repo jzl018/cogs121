@@ -29,22 +29,21 @@ button starts/stops tracking current location upon being clicked. -->
 
     <input id="pac-input" placeholder="Search for a location"></input>
 
-    <div id="directions" onclick="showDirections()"></div>
+    <div id="directions"></div>
 
     <div id="nextEvent">
-      <a href="agenda"><h5 id="nextTitle">Agenda -</h5></a>
+      <a href="agenda"><h5 id="nextTitle">Agenda</h5></a>
       <div id="eventTitle"></div>
-    </div>
-
-    <div id="steps" onclick="showDirections()">
-      <img id="stepsImg" src="images/signs.png" />
-    </div>
-
-    <a href="javascript:startStopTrack()">
-      <div id="agenda">
-        <img id="actionImg" src="images/play-button.png" />
+      <div id="steps" onclick="showDirections()">
+        <img id="stepsImg" src="images/signs.png" />
       </div>
-    </a>
+
+      <a href="javascript:startStopTrack()">
+        <div id="agenda">
+          <img id="actionImg" src="images/play-button.png" />
+        </div>
+      </a>
+    </div>
 
     <!-- jQuery, Popper, and Bootstrap -->
     <script src="js/jquery-3.3.1.js"></script>

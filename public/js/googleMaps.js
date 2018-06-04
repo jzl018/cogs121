@@ -13,6 +13,8 @@ let trackInterval = null;
 let tracking = false;
 
 let directionsDiv = document.getElementById('directions');
+directionsDiv.style.maxHeight = "500px";
+directionsDiv.style.overflow = "scroll";
 let actionImg = document.getElementById('actionImg');
 let actionBtn = document.getElementById('agenda');
 
@@ -75,10 +77,10 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
 
 
 function showDirections() {
-    if (directionsDiv.style.zIndex == 999)
+    if (directionsDiv.style.zIndex == 49)
         directionsDiv.style.zIndex = -1;
     else
-        directionsDiv.style.zIndex = 999;
+        directionsDiv.style.zIndex = 49;
 }
 
 function changeAction() {
