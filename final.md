@@ -12,6 +12,7 @@
 	- Displaying map and search bar
 	- Create marker from inputted location in search bar
 		- Create route between current location and destination
+- Worked on MD files
 
 4) Kenneth Truong
 - Created SQLite database
