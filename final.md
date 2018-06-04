@@ -1,7 +1,7 @@
 ~~~~~~~~~~~~TEAM MEMBERS~~~~~~~~~~~
 
 1) Lee Tiger Liang
-- 
+-
 
 2) Jason Liu
 - Helped Kenneth with creating SQLite database
@@ -15,7 +15,9 @@
 
 4) Kenneth Truong
 - Created SQLite database
-- Figured out functions to add, delete, and display data 
+- Figured out functions to add, delete, and display data
+- Worked on Agenda page and helped display data dynamically from database
+- Helped with MD files
 
 ~~~~~~~~~~~~SOURCE CODE FILES~~~~~~~~~~~~
 
@@ -32,16 +34,16 @@
   of the bottom
 - Starts/stop tracking current location after clicking "play" button
 
-3) agenda.handlebars 
+3) agenda.handlebars
 - Allows users to go back to home page
 - Sets up forms to add an event to the agenda
 	- Event location uses Google Map's autocomplete
 
 ******** JAVASCRIPT ********
 
-1) app.js 
+1) app.js
 - Creates SQLite database
-- Defines GET methods for all of our handlebars 
+- Defines GET methods for all of our handlebars
 - Handles all SQLite database changes
 
 
@@ -60,7 +62,7 @@
 - Tracks current location every 5 seconds after pressing triggering the function
 
 5) login.js
-- Toggles image/title between Philip Guo and Sean Kross upon clicking "Create 
+- Toggles image/title between Philip Guo and Sean Kross upon clicking "Create
   New Account"
 
 /routes
