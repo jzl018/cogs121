@@ -22,16 +22,6 @@ body {
   margin-top: 10px;
 }
 
-#pac-input{
-  height: 6.5vh;
-  width: 80vw;
-  background-color: #fff;
-  font-family: Roboto;
-  font-size: 20px;
-  font-weight: 300;
-  text-overflow: ellipsis;
-}
-
 #signoutWrap {
   display: flex;
   align-items: center;
@@ -51,7 +41,6 @@ body {
   width: 40px;
 
   position: absolute;
-
 }
 
 #center {
