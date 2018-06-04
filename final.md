@@ -1,4 +1,4 @@
-~~~~~~~~~~~~TEAM MEMBERS~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~TEAM MEMBERS~~~~~~~~~~~~~~~~~~~~~~~
 
 1) Lee Tiger Liang
 -
@@ -20,7 +20,7 @@
 - Worked on Agenda page and helped display data dynamically from database
 - Helped with MD files
 
-~~~~~~~~~~~~SOURCE CODE FILES~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~SOURCE CODE FILES~~~~~~~~~~~~~~~~~~~~~~~~
 
 ******** HANDLEBARS ********
 /views
@@ -90,3 +90,7 @@ For the following .js files, functionality: GETS the respective page via app.js
 3) login.css
 - Centers everything (forms and buttons)
 - Makes image circular
+
+~~~~~~~~~~~~~~~~~~~~~~~~DEMO VIDEO~~~~~~~~~~~~~~~~~~~~~~~~
+Link: https://drive.google.com/file/d/1NHO-SRRA6wg_AWIjyjILCkVbZgp1bCfL/view?usp=sharing
+
