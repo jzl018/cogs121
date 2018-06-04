@@ -74,11 +74,11 @@
 
 For the following .js files, functionality: GETS the respective page via app.js
 
-6) agenda.js
+7) agenda.js
 
-7) home.js
+8) home.js
 
-8) login.js
+9) login.js
 
 ******** CSS ********
 
