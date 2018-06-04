@@ -13,6 +13,7 @@
 	- Create marker from inputted location in search bar
 		- Create route between current location and destination
 - Worked on MD files
+- Recorded demo video
 
 4) Kenneth Truong
 - Created SQLite database
@@ -51,6 +52,7 @@
 - Creates our SQLite database
 
 /public/js
+
 3) agenda.js
 - Defines the insertion/deletion functions in agenda
 - Allows for autocomplete in location input form
@@ -81,6 +83,7 @@ For the following .js files, functionality: GETS the respective page via app.js
 ******** CSS ********
 
 public/css
+
 1) agenda.css
 - Formats sign out button to be upper left corner
 - Centers event name/location forms
