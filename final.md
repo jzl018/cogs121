@@ -1,7 +1,12 @@
 ~~~~~~~~~~~~~~~~~~~~~~~ TEAM MEMBERS ~~~~~~~~~~~~~~~~~~~~~~
 
 1) Lee Tiger Liang
--
+- Styled home screen to make it in line with material design and GoogleMaps API
+- Focused on front-end design and integration with back-end
+- Assisted in debugging Agenda screen
+- Delegated front-end and back-end jobs to group
+- Helped with main logic and functionality of code, especially live tracking
+  location and how to deal with continuous tracking + route previewing
 
 2) Jason Liu
 - Helped Kenneth with creating SQLite database
