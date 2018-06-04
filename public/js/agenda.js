@@ -20,8 +20,6 @@ function reloadAgenda() {
 }
 
 $('#insertButton').click(() => {
-  console.log($('#autocomplete').text());
-
   $.ajax({
     // all URLs are relative to http://localhost:3000/
     url: 'users',
